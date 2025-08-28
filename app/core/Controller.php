@@ -1,7 +1,8 @@
 <?php 
 class Controller {
-    protected function view($view)
+    protected function view($view, $viewData = [])
     {
+        extract($viewData); // isso aqui é interessante de usar
         $viewFile = __DIR__ . '/../views/' . $view . '.php';
         if (!file_exists($viewFile))
         {
